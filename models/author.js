@@ -12,11 +12,13 @@ var AuthorSchema = new Schema(
 );
 
 //virtuals
+AuthorSchema
 .virtual('name')
 .get(function() {
   return this.family_name + ', ' + this.first_name;
 });
 
+AuthorSchema
 .virtual('url')
 .get(function() {
   return '/catalog/author/' + this._id;
